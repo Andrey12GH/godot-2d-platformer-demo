@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8jlyy4wh5c0e"]
+[gd_scene load_steps=8 format=3 uid="uid://c8jlyy4wh5c0e"]
 
 [ext_resource type="Script" uid="uid://csu8ms8igvyo6" path="res://source/main.gd" id="1_vvgtc"]
 [ext_resource type="PackedScene" uid="uid://c6uxx2404ekx4" path="res://source/maps/map_scenes/map_demo.tscn" id="2_t0xob"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cs53enf3mtjh0" path="res://source/system/music_player.gd" id="6_tikb8"]
 [ext_resource type="PackedScene" uid="uid://dx3uj7tigt7m8" path="res://source/ui/transition_layer/transition_layer.tscn" id="20_ljs4f"]
 [ext_resource type="PackedScene" uid="uid://c2dysy8ciq6t3" path="res://source/ui/hud/hud.tscn" id="20_p4k7n"]
+[ext_resource type="PackedScene" path="res://source/interactables/info_terminal.tscn" id="21_terminal"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vvgtc")
@@ -22,3 +23,7 @@ stream = ExtResource("5_hmqt0")
 volume_db = -9.0
 autoplay = true
 script = ExtResource("6_tikb8")
+
+[node name="InfoTerminal" parent="." instance=ExtResource("21_terminal")]
+position = Vector2(448, 248)
+message = "Checkpoint ready. Explore the next room."
