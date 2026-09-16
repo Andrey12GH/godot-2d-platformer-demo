@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://source/interactables/info_terminal.gd" id="1_terminal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_terminal"]
+size = Vector2(56, 72)
+
+[node name="InfoTerminal" type="Area2D"]
+script = ExtResource("1_terminal")
+
+[node name="Body" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-18, -24, 18, -24, 18, 24, -18, 24)
+color = Color(0.2, 0.72, 0.86, 1)
+
+[node name="Screen" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-12, -16, 12, -16, 12, 5, -12, 5)
+color = Color(0.04, 0.12, 0.18, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_terminal")
+
+[node name="Prompt" type="Label" parent="."]
+visible = false
+offset_left = -110.0
+offset_top = -62.0
+offset_right = 110.0
+offset_bottom = -34.0
+text = "Checkpoint reached"
+horizontal_alignment = 1
